@@ -99,5 +99,7 @@ for item in os.listdir(move_dir):
     for extension in goal_dirs:
         if item.endswith(extension):
             file_path = os.path.abspath(item)
+            if os.path.isdir(goal_dirs[extension]) == False:
+                os.mkdir(goals_dirs[extensions])
             shutil.move(file_path, goal_dirs[extension])
             os.remove(file_path)
